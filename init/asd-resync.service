@@ -9,6 +9,12 @@ PartOf=asd.service
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/anything-sync-daemon resync
+OOMScoreAdjust=-1000
+Nice=19
+IOSchedulingClass=idle
+IOSchedulingPriority=7
+CPUSchedulingPolicy=idle
+CPUSchedulingPriority=1
 
 [Install]
 WantedBy=default.target
