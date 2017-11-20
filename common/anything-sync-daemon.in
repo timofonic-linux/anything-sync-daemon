@@ -274,7 +274,7 @@ ungraceful_state_check() {
 
 					[[ $(date -d "$BACK_OVFS_TIME" "+%s") -ge $(date -d "$BACKUP_TIME" "+%s") ]] &&
 						TARGETTOKEEP="$BACK_OVFS" ||
-         					TARGETTOKEEP="$BACKUP"
+						TARGETTOKEEP="$BACKUP"
 
 					if [[ $CRRE -eq 1 ]]; then
 						opts="-a --reflink=auto"
@@ -289,7 +289,7 @@ ungraceful_state_check() {
 
 					if [[ $CRRE -eq 1 ]]; then
 						opts="-a --reflink=auto"
-          					cp $opts "$BACKUP" "$BACKUP-crashrecovery-$NOW"
+						cp $opts "$BACKUP" "$BACKUP-crashrecovery-$NOW"
 						# mv --no-target-directory "$BACKUP" "$DIR"
 
 					fi
